@@ -12,9 +12,9 @@
 ### gamePage
   ![그림3](https://user-images.githubusercontent.com/70316489/202116733-1f12a81e-f9a9-47a8-8378-3de2dc992cfe.png)
 >플레이 화면입니다. 밑에 제한 사항 및 현재 몇번을 뒤집었는지 볼 수 있으며 refresh버튼을 이용해 초기화하여 다시 도전 할 수 있습니다.
-####성공
+* 성공
 >>![그림4](https://user-images.githubusercontent.com/70316489/202117515-47819017-2b43-4ec3-a21b-07379922cc4f.png)
-####실패
+* 실패
 >>![그림5](https://user-images.githubusercontent.com/70316489/202117639-c57ecffe-0a4c-409e-b502-b473db206653.png)
 ### scorePage
   ![그림6](https://user-images.githubusercontent.com/70316489/202117948-cb3ab993-f737-4fa2-8d8c-5c293fc02c9b.png)
