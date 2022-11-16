@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Score</title>
+</head>
+<body>
+    <div class="wrapper start-page" style="width: 40vw; ">
+        <hr class="start-hr-style" >
+        <div class="end-page-img">
+            <img src="images/gameOver.png" alt="aces-img">
+        </div>
+        <div class="end-page-detail">            
+            <div class="details">
+                <button><a href="./startPage.html" style="text-decoration: none; color:#4488AA">Restart</a>  </button> 
+            </div>
+        </div>
+    </div>
+    <hr style="padding: 1.5px; 
+    background-color:black; 
+    border-radius: 3px;
+    margin: 10px 10px;
+    height: 60vh;">
+    <div class="wrapper end-page score">
+        <hr class="start-hr-style" >
+        <h1 class="title">
+            score
+        </h1>
+        <table class="score-list table" style="
+            background-color: #f8f8f8;
+            width: 100%; font-size: 0.85em;">
+            <thead>
+                <th>ranking</th>
+                <th>name</th>
+                <th>maxFlips</th>
+                <th>leftFlips</th>
+                <th>limitTime</th>
+            </thead>
+            <tfoot></tfoot>
+        </table>
+    </div>
+    <script>
+        let scoreBody = document.querySelector(".score-list tfoot");
+        let i =1;
+        console.log(localStorage.getItem('data'))
+        JSON.parse(localStorage.getItem('data'))
+        .sort(function(a,b){
+            if((a.lefttime-a.limitTime) > (b.lefttime-b.limitTime)) return 1;
+            if((a.lefttime-a.limitTime) === (b.lefttime-b.limitTime)) return 0;
+            if((a.lefttime-a.limitTime) < (b.lefttime-b.limitTime)) return -1;
+        }).forEach(element => {
+            scoreBody.innerHTML += 
+                `<tr>
+                    <th>${i++}</th> 
+                    <td> ${element.name} </td> 
+                    <td> ${element.maxFlips} </td>
+                    <td> ${element.flips} </td>
+                    <td> ${element.limitTime} </td>
+                </tr>`;
+        });
+    </script>
+</body>
+</html>

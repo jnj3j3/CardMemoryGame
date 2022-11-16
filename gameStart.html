@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper start-page">
+        <div style="text-align: center;">
+            <h1>Choose Level</h1>
+        </div>
+        <hr class="start-hr-style" >
+        <table class="choose-level">
+            <tr>
+                <td>
+                    limit time : 
+                </td>
+                <td>
+                    <input type="text" placeholder="insert limit time" class="limitTime">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    limit flip :
+                </td>
+                <td>
+                    <input type="text" placeholder="insert limit flip" class="limitFlip">
+                </td>
+            </tr>
+        </table>
+        <div class="start-page-detail">            
+            <div class="details">
+                <button onclick="storeLevel()">
+                    <a href="./index.html" 
+                    style="text-decoration: none; color:#4488AA">start</a>  
+                </button> 
+            </div>
+        </div>
+        <audio controls style="width: 10vw; height: 3vh">
+            <source src="./music/stranger-things-124008.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <script>
+        const storeLevel =()=>{
+            let limitTime = document.querySelector(".limitTime").value;
+            let limitFlip = document.querySelector(".limitFlip").value;
+            if(typeof(limitTime)=="number"&&typeof(limitFlip)=="number"){
+                localStorage.setItem("limitTime",limitTime);
+                localStorage.setItem("limitFlip",limitFlip);
+            }else{
+                localStorage.setItem("limitTime",50);
+                localStorage.setItem("limitFlip",20);
+            }
+
+            }
+
+    </script>
+</body>
+</html>
